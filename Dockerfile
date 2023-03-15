@@ -19,5 +19,8 @@ FROM scratch as binary
 # get stackblur binary
 COPY --from=builder /go/bin/ /usr/bin/
 
+# create workdir
+WORKDIR /home
+
 # set entry
 ENTRYPOINT ["/usr/bin/stackblur"]
